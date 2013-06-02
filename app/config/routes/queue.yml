@@ -1,0 +1,19 @@
+enqueue_message:
+  pattern: /queue
+  defaults: { _controller: Controller\Queue::enqueue }
+  requirements: { _method: POST }
+
+process_message:
+  pattern: /queue/message/{messageId}
+  defaults: { _controller: Controller\Queue::process }
+  requirements: { _method: PUT }
+
+serve_next_message:
+  pattern: /queue/message/{messageId}
+  defaults: { _controller: Controller\Queue::serveNextMessage }
+  requirements: { _method: GET }
+
+dequeue_message:
+  pattern: /queue/dequeue/{messageId}
+  defaults: { _controller: Controller\Queue::dequeue }
+  requirements: { _method: PUT }

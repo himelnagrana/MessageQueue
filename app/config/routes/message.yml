@@ -1,0 +1,19 @@
+insert_message:
+  pattern: /message
+  defaults: { _controller: Controller\Message::insert }
+  requirements: { _method: POST }
+
+get_message_by_id:
+  pattern: /message/{messageId}
+  defaults: { _controller: Controller\Message::get }
+  requirements: { _method: GET }
+
+update_message_by_id:
+  pattern: /message/{messageId}
+  defaults: { _controller: Controller\Message::update }
+  requirements: { _method: PUT }
+
+delete_message_by_id:
+  pattern: /message/{messageId}
+  defaults: { _controller: Controller\Message::delete }
+  requirements: { _method: DELETE }
