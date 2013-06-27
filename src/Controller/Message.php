@@ -30,8 +30,8 @@ class Message extends Base
         $data = $this->request->request->all();
 
         try {
-            $queue = $this->messageRepository->insert($data);
-            $this->response->setContent(json_encode(array('result' => $queue)));
+            $message = $this->messageRepository->insert($data);
+            $this->response->setContent(json_encode(array('result' => $message)));
             $this->response->setStatusCode(201);
         } catch (\InvalidArgumentException $e) {
             $this->response->setContent(json_encode(array('result' => $e->getMessage())));
@@ -44,8 +44,8 @@ class Message extends Base
     public function get($messageId)
     {
         try {
-            $queue = $this->messageRepository->get($messageId);
-            $this->response->setContent(json_encode(array('result' => $queue)));
+            $message = $this->messageRepository->get($messageId);
+            $this->response->setContent(json_encode(array('result' => $message)));
             $this->response->setStatusCode(200);
         } catch (\InvalidArgumentException $e) {
             $this->response->setContent(json_encode(array('result' => $e->getMessage())));
@@ -60,8 +60,8 @@ class Message extends Base
         $data = $this->request->request->all();
 
         try {
-            $queue = $this->messageRepository->update($messageId, $data);
-            $this->response->setContent(json_encode(array('result' => $queue)));
+            $message = $this->messageRepository->update($messageId, $data);
+            $this->response->setContent(json_encode(array('result' => $message)));
             $this->response->setStatusCode(200);
         } catch (\InvalidArgumentException $e) {
             $this->response->setContent(json_encode(array('result' => $e->getMessage())));
