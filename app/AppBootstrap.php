@@ -67,6 +67,8 @@ class Bootstrap
                 $this->routes = array_merge($this->routes, $routes);
             }
         }
+        
+        $this->container['conf'] = $this->conf;
     }
 
     private function loadRoutes()
