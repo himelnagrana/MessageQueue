@@ -46,9 +46,9 @@ abstract class Base
     {
         $this->container = $container;
 
-        $this->dm = $container['dm'];
-        $this->em = $container['em'];
-        $this->conn = $container['dbal'];
+        $this->dm     = $container['dm'];
+        $this->em     = $container['em'];
+        $this->conn   = $container['dbal'];
         $this->config = $container['conf'];
     }
 

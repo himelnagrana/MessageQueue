@@ -6,6 +6,7 @@ use Entities\Queue as QueueEntity;
 
 class Queue
 {
+
     public function map($data, QueueEntity $queueEntity)
     {
         if (!empty($data['message_id'])){

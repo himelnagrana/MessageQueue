@@ -6,6 +6,7 @@ use Entities\Message as MessageEntity;
 
 class Message
 {
+
     public function map($data, MessageEntity $messageEntity)
     {
         if (!empty($data['encoding'])){

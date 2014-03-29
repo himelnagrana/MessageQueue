@@ -1,4 +1,5 @@
 <?php
+
 namespace Entities;
 
 use Respect\Validation\Validator;
@@ -69,10 +70,13 @@ class Queue
     public function isValid()
     {
         try {
+
             Validator::create()->notEmpty()->numeric()->assert($this->getMessageId());
             Validator::create()->notEmpty()->numeric()->assert($this->getSerial());
             Validator::create()->notEmpty()->numeric()->assert($this->getPriority());
+
         } catch (\InvalidArgumentException $e) {
+
             return false;
         }
 

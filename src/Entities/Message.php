@@ -1,4 +1,5 @@
 <?php
+
 namespace Entities;
 
 use Respect\Validation\Validator;
@@ -52,10 +53,13 @@ class Message
     public function isValid()
     {
         try {
+
             Validator::create()->notEmpty()->numeric()->assert($this->getClientId());
             Validator::create()->notEmpty()->numeric()->assert($this->getEncoding());
             Validator::create()->notEmpty()->numeric()->assert($this->getMessageBody());
+
         } catch (\InvalidArgumentException $e) {
+
             return false;
         }
 

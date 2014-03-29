@@ -25,17 +25,26 @@ class Message extends EntityRepository
      */
     protected $request;
 
-
+    /**
+     * @param \Pimple $container
+     */
     public function setContainer($container)
     {
         $this->container = $container;
     }
 
+    /**
+     * @param \Symfony\Component\HttpFoundation\Request $container
+     */
     public function setRequest($request)
     {
         $this->request = $request;
     }
 
+    /**
+     * @param Array $data to insert
+     * @return array inserted message array
+     */
     public function insert($data)
     {
         $messageEntity = new MessageEntity();
@@ -53,6 +62,10 @@ class Message extends EntityRepository
         return $mapped->toArray();
     }
 
+    /**
+     * @param Integer $id
+     * @return array inserted message array
+     */
     public function get($id)
     {
         $message = $this->find($id);
@@ -64,6 +77,12 @@ class Message extends EntityRepository
         return $message->toArray();
     }
 
+    /**
+     * @param Integer $id
+     * @param Array $data
+     * @return array inserted message array
+     * @throws \InvalidArgumentException on failure
+     */
     public function update($id, $data)
     {
         $messageEntity = $this->find($id);
@@ -85,6 +104,10 @@ class Message extends EntityRepository
         return $mapped->toArray();
     }
 
+    /**
+     * @param Integer $id
+     * @throws \InvalidArgumentException on failure
+     */
     public function delete($id)
     {
         $message = $this->find($id);

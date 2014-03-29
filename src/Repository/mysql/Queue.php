@@ -88,12 +88,12 @@ class Queue extends EntityRepository
         $repository = $this->container['em']->getRepository('Entities\Queue');
 
         $query = $repository->createQueryBuilder('q')
-            ->select('MAX(q.serial) as maxserial')
-            ->where('q.status = :status')
-            ->andWhere('client_id = :client')
-            ->setParameter('status', 'queued')
-            ->setParameter('client', $clientId)
-            ->getQuery();
+                            ->select('MAX(q.serial) as maxserial')
+                            ->where('q.status = :status')
+                            ->andWhere('client_id = :client')
+                            ->setParameter('status', 'queued')
+                            ->setParameter('client', $clientId)
+                            ->getQuery();
 
         $queue = $query->getResult();
 
@@ -109,12 +109,12 @@ class Queue extends EntityRepository
         $repository = $this->container['em']->getRepository('Entities\Queue');
 
         $query = $repository->createQueryBuilder('q')
-            ->select('MAX(q.serial) as maxserial')
-            ->where('q.status = :status')
-            ->andWhere('client_id = :client')
-            ->setParameter('status', 'queued')
-            ->setParameter('client', $clientId)
-            ->getQuery();
+                            ->select('MAX(q.serial) as maxserial')
+                            ->where('q.status = :status')
+                            ->andWhere('client_id = :client')
+                            ->setParameter('status', 'queued')
+                            ->setParameter('client', $clientId)
+                            ->getQuery();
 
         $queue = $query->getResult();
 

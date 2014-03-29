@@ -15,9 +15,12 @@ class Queue extends Base
         $this->response = new Response();
         $this->response->headers->set('Content-Type', 'application/json');
 
-        if ($this->config['persister_choice'] == 'mysql'){
+        if ($this->config['persister_choice'] == 'mysql') {
+
             $this->queueRepository = $this->em->getRepository('Entities\Queue');
+
         } elseif ($this->config['persister_choice'] == 'mongodb'){
+
             $this->queueRepository = $this->em->getRepository('Document\Queue');
         }
 
@@ -30,10 +33,13 @@ class Queue extends Base
         $data = $this->request->request->all();
 
         try {
+
             $queue = $this->queueRepository->enqueue($data);
             $this->response->setContent(json_encode(array('result' => $queue)));
             $this->response->setStatusCode(201);
+
         } catch (\InvalidArgumentException $e) {
+
             $this->response->setContent(json_encode(array('result' => $e->getMessage())));
             $this->response->setStatusCode($e->getCode());
         }
@@ -44,10 +50,13 @@ class Queue extends Base
     public function process($messageId)
     {
         try {
+
             $queue = $this->queueRepository->process($messageId);
             $this->response->setContent(json_encode(array('result' => $queue)));
             $this->response->setStatusCode(200);
+
         } catch (\InvalidArgumentException $e) {
+
             $this->response->setContent(json_encode(array('result' => $e->getMessage())));
             $this->response->setStatusCode($e->getCode());
         }
@@ -58,10 +67,13 @@ class Queue extends Base
     public function serveNextMessage($clientId)
     {
         try {
+
             $messageId = $this->queueRepository->serveNextMessage($clientId);
             $this->response->setContent(json_encode(array('result' => $messageId)));
             $this->response->setStatusCode(200);
+
         } catch (\InvalidArgumentException $e) {
+
             $this->response->setContent(json_encode(array('result' => $e->getMessage())));
             $this->response->setStatusCode($e->getCode());
         }
@@ -72,10 +84,13 @@ class Queue extends Base
     public function dequeue($messageId)
     {
         try {
+
             $queue = $this->queueRepository->dequeue($messageId);
             $this->response->setContent(json_encode(array('result' => $queue)));
             $this->response->setStatusCode(200);
+
         } catch (\InvalidArgumentException $e) {
+
             $this->response->setContent(json_encode(array('result' => $e->getMessage())));
             $this->response->setStatusCode($e->getCode());
         }
