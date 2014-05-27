@@ -1,4 +1,11 @@
 {
+    "name": "MessageQueue",
+    "license": "MIT",
+    "type": "project",
+    "description": "MessageQueue is a small REST application which deals with managing message queue system. MessageQueue is built on top of Lemon (https://github.com/phpfour/Lemon)",
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
     "require": {
         "symfony/class-loader": "2.1.*",
         "symfony/http-foundation": "2.1.*",
