@@ -1,5 +1,5 @@
 {
-    "name": "MessageQueue",
+    "name": "message queue",
     "license": "MIT",
     "type": "project",
     "description": "MessageQueue is a small REST application which deals with managing message queue system. MessageQueue is built on top of Lemon (https://github.com/phpfour/Lemon)",
