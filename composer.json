@@ -16,7 +16,9 @@
         "respect/validation": "dev-master",
         "sami/sami": "dev-master",
         "doctrine/common": "dev-master",
+        "doctrine/doctrine-bundle": "1.2.*",
         "doctrine/mongodb-odm": "dev-master",
+        "doctrine/mongodb-odm-bundle": "3.0.*@dev",
         "doctrine/dbal": "2.4.x-dev",
         "doctrine/orm": "dev-master"
     }
