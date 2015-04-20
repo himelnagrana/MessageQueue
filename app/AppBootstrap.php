@@ -10,7 +10,8 @@ use Doctrine\Common\ClassLoader,
     Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver,
     Doctrine\ORM\EntityManager,
     Doctrine\ORM\Configuration as ORMConfiguration,
-    Symfony\Component\Yaml\Parser;
+    Symfony\Component\Yaml\Parser,
+	Pimple\Container as Pimple;
 
 class Bootstrap
 {
@@ -88,7 +89,7 @@ class Bootstrap
 
     private function loadDBAL()
     {
-        $this->container['dbal'] = $this->container->share(function($c){
+        $this->container['dbal'] = $this->container->factory(function($c){
 
             $dbalConfig = new \Doctrine\DBAL\Configuration();
 
@@ -113,7 +114,7 @@ class Bootstrap
 
     private function loadDoctrineORM()
     {
-        $this->container['em'] = $this->container->share(function($c){
+        $this->container['em'] = $this->container->factory(function($c){
 
             if ($c['env'] == "dev") {
                 $cache = new \Doctrine\Common\Cache\ArrayCache;
@@ -145,7 +146,7 @@ class Bootstrap
 
     private function loadDoctrineODM()
     {
-        $this->container['dm'] = $this->container->share(function($c){
+        $this->container['dm'] = $this->container->factory(function($c){
 
             $config = new Configuration();
             $config->setProxyDir(__DIR__ . '/cache');

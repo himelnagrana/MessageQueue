@@ -6,6 +6,7 @@ use Doctrine\ORM\EntityRepository;
 
 use Entities\Message as MessageEntity;
 use Mapper\Message as MessageMapper;
+use Pimple\Container as Pimple;
 
 class Message extends EntityRepository
 {
@@ -16,7 +17,7 @@ class Message extends EntityRepository
     protected $messageEntity;
 
     /**
-     * @var \Pimple
+     * @var Pimple
      */
     protected $container;
 
@@ -26,7 +27,7 @@ class Message extends EntityRepository
     protected $request;
 
     /**
-     * @param \Pimple $container
+     * @param Pimple $container
      */
     public function setContainer($container)
     {

@@ -5,4 +5,4 @@ app/config/parameter.yml
 
 composer.phar
 composer.lock
-.idea
+.idea/

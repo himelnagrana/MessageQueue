@@ -3,37 +3,38 @@
 namespace Entities;
 
 use Respect\Validation\Validator;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @Entity(repositoryClass="Repository\MySql\Message")
- * @Table(name="message")
+ * @ORM\Entity(repositoryClass="Repository\MySql\Message")
+ * @ORM\Table(name="message")
  */
 class Message
 {
     /**
-     * @Id
-     * @Column(type="integer")
-     * @GeneratedValue
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue
      */
     protected $id;
 
     /**
-     * @Column(type="integer", length=5)
+     * @ORM\Column(type="integer", length=5)
      */
     protected $client_id;
 
     /**
-     * @Column(length=20)
+     * @ORM\Column(length=20)
      */
     protected $encoding; // [values: ASCII, Base64]
 
     /**
-     * @Column(length=400)
+     * @ORM\Column(length=400)
      */
     protected $message_body;
 
     /**
-     * @Column(type="datetime", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     protected $created;
 

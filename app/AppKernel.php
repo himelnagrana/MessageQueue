@@ -8,7 +8,9 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\Routing\RequestContext,
     Symfony\Component\Routing\Matcher\UrlMatcher,
     Symfony\Component\Routing\Exception\ResourceNotFoundException,
-    Symfony\Component\Routing\Exception\MethodNotAllowedException;
+    Symfony\Component\Routing\Exception\MethodNotAllowedException,
+	Doctrine\DBAL\Connection as DBALConnection,
+	Pimple\Container as Pimple;
 
 class AppKernel
 {
@@ -117,7 +119,7 @@ class AppKernel
         $this->request->attributes->add($attributes);
     }
 
-    private function logTrace($response)
+    private function logTrace(Response $response)
     {
         $logContent = "
 Response Type    : Success

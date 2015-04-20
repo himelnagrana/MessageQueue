@@ -3,52 +3,53 @@
 namespace Entities;
 
 use Respect\Validation\Validator;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @Entity(repositoryClass="Repository\MySql\Queue")
- * @Table(name="queue")
+ * @ORM\Entity(repositoryClass="Repository\MySql\Queue")
+ * @ORM\Table(name="queue")
  */
 class Queue
 {
     /**
-     * @Id
-     * @Column(type="integer")
-     * @GeneratedValue
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue
      */
     protected $id;
 
     /**
-     * @Column(type="integer")
+     * @ORM\Column(type="integer")
      */
     protected $message_id;
 
     /**
-     * @Column(type="integer", length=5)
+     * @ORM\Column(type="integer", length=5)
      */
     protected $client_id;
 
     /**
-     * @Column(type="integer", length=5)
+     * @ORM\Column(type="integer", length=5)
      */
     protected $serial;
 
     /**
-     * @Column(type="integer", length=5)
+     * @ORM\Column(type="integer", length=5)
      */
     protected $priority;
 
     /**
-     * @Column(length=20)
+     * @ORM\Column(length=20)
      */
     protected $encoding; // [values: ASCII, Base64]
 
     /**
-     * @Column(length=20)
+     * @ORM\Column(length=20)
      */
     protected $status; // [values: queued, processing, dequeued, failed]
 
     /**
-     * @Column(type="datetime", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     protected $updatedat;
 

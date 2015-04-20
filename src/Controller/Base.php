@@ -4,6 +4,8 @@ namespace Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Doctrine\DBAL\Connection as DBALConnection;
+use Pimple\Container as Pimple;
 
 abstract class Base
 {
@@ -38,7 +40,7 @@ abstract class Base
     protected $conn;
 
     /**
-     * @var \Pimple
+     * @var Pimple
      */
     protected $container;
 

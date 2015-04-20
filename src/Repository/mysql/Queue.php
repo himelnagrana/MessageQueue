@@ -6,6 +6,7 @@ use Doctrine\ORM\EntityRepository;
 
 use Entities\Queue as QueueEntity;
 use Mapper\Queue as QueueMapper;
+use Pimple\Container as Pimple;
 
 class Queue extends EntityRepository
 {
@@ -16,7 +17,7 @@ class Queue extends EntityRepository
     protected $queueEntity;
 
     /**
-     * @var \Pimple
+     * @var Pimple
      */
     protected $container;
 

@@ -18,4 +18,4 @@ $container = $bootstrap->container;
 
 prepareBackupDatabase();
 
-HttpHelper::$bootstrap = $bootstrap;
+//HttpHelper::$bootstrap = $bootstrap;

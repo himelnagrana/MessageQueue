@@ -5,6 +5,13 @@ on top of Lemon (https://github.com/phpfour/Lemon).
 Features
 ========
 
+0.1.9
+----
+* Update vendor libraries to latest version
+* Removed deprecated functions and replaced with latest alternatives
+* Updated autoload, logging
+
+
 0.1
 ----
 * Manage (enqueue, process, dequeue) messages.
