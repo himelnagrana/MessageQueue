@@ -7,19 +7,19 @@
         "psr-0": { "": "src/" }
     },
     "require": {
-        "symfony/class-loader": "2.6.6",
-        "symfony/http-foundation": "2.6.6",
-        "symfony/yaml": "2.6.6",
-        "symfony/console": "2.6.6",
-        "symfony/http-kernel": "2.6.6",
-        "symfony/routing": "2.6.6",
-        "respect/validation": "0.8.5",
-	"sami/sami": "3.0.3",
-        "doctrine/common": "2.5.0",
-        "doctrine/doctrine-bundle": "1.4.0",
-        "doctrine/mongodb-odm": "1.0.*@dev",
-        "doctrine/mongodb-odm-bundle": "3.0.*@dev",
-        "doctrine/dbal": "2.5.1",
-        "doctrine/orm": "2.5.0"
+        "symfony/class-loader": "3.4.47",
+        "symfony/http-foundation": "6.3.4",
+        "symfony/yaml": "6.3.3",
+        "symfony/console": "6.3.4",
+        "symfony/http-kernel": "6.3.4",
+        "symfony/routing": "6.3.3",
+        "respect/validation": "2.3.0",
+	"sami/sami": "4.1.2",
+        "doctrine/common": "3.4.3",
+        "doctrine/doctrine-bundle": "2.10.2",
+        "doctrine/mongodb-odm": "2.5.2",
+        "doctrine/mongodb-odm-bundle": "4.6.0",
+        "doctrine/dbal": "4.0.0-beta2",
+        "doctrine/orm": "2.16.2"
     }
 }
